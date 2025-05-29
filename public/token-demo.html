@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QNow Platform - Token Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .token-display {
+      word-break: break-all;
+      font-family: monospace;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .steps-container {
+      counter-reset: step-counter;
+    }
+    .step {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .step::before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #ff5722;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      text-align: center;
+      line-height: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Include the header partial -->
+  <div id="header-container"></div>
+  
+  <div class="container my-4">
+    <h2 class="mb-4">Using Orange API Tokens</h2>
+    
+    <div class="card mb-4">
+      <div class="card-header">
+        <h3 class="h5 m-0">Current Token Status</h3>
+      </div>
+      <div class="card-body">
+        <div id="token-status-detail">Loading token status...</div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h5 m-0">How to Use the Token</h3>
+      </div>
+      <div class="card-body">
+        <div class="steps-container">
+          <div class="step">
+            <h4 class="h6">Generate a Token</h4>
+            <p>Use the <a href="/dev-tools.html">Dev Tools</a> page to generate a valid token with your Orange API credentials.</p>
+          </div>
+          
+          <div class="step">
+            <h4 class="h6">Store the Token</h4>
+            <p>After generating, click the "Store Token for Testing" button in the Dev Tools page. This saves the token in your browser's local storage.</p>
+          </div>
+          
+          <div class="step">
+            <h4 class="h6">Include the Token in API Requests</h4>
+            <p>The token is automatically used in API requests by the QNow application. It's included in the Authorization header as <code>Bearer &lt;token&gt;</code></p>
+            <pre class="bg-light p-3 rounded"><code>
+const response = await fetch('/api/qos-profiles', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${accessToken}`,
+    'Accept': 'application/json'
+  }
+});
+            </code></pre>
+          </div>
+          
+          <div class="step">
+            <h4 class="h6">Test the Connection</h4>
+            <p>Use the buttons below to test your API connection with the current token:</p>
+            <button id="test-connection-btn" class="btn btn-primary">Test API Connection</button>
+            <button id="get-profiles-btn" class="btn btn-secondary ms-2">Get QoS Profiles</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card mt-4" id="results-card" style="display: none;">
+      <div class="card-header">
+        <h3 class="h5 m-0">Results</h3>
+      </div>
+      <div class="card-body">
+        <pre id="results" class="bg-light p-3 rounded"></pre>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Load the header
+      try {
+        const headerResponse = await fetch('/header.html');
+        if (headerResponse.ok) {
+          const headerHtml = await headerResponse.text();
+          document.getElementById('header-container').innerHTML = headerHtml;
+          
+          // Load token helper script manually since it was loaded in the header
+          const tokenHelperScript = document.createElement('script');
+          tokenHelperScript.src = '/js/token-helper.js';
+          document.body.appendChild(tokenHelperScript);
+        }
+      } catch (error) {
+        console.error('Error loading header:', error);
+      }
+      
+      // Get token status detail
+      const tokenStatusDetail = document.getElementById('token-status-detail');
+      const storedToken = localStorage.getItem('orange_api_token');
+      
+      if (storedToken) {
+        try {
+          const tokenData = JSON.parse(storedToken);
+          if (tokenData && tokenData.access_token) {
+            const timestamp = localStorage.getItem('orange_api_token_timestamp');
+            let expiryMessage = '';
+            
+            if (timestamp && tokenData.expires_in) {
+              const expiryDate = new Date(parseInt(timestamp) + (tokenData.expires_in * 1000));
+              const now = new Date();
+              
+              if (expiryDate > now) {
+                const diffMs = expiryDate - now;
+                const diffMins = Math.round(diffMs / 60000);
+                expiryMessage = `Expires in ${diffMins} minutes`;
+                
+                tokenStatusDetail.innerHTML = `
+                  <div class="alert alert-success">
+                    <h5><i class="bi bi-check-circle"></i> Token Ready</h5>
+                    <p>You have a valid Orange API token.</p>
+                    <div class="mb-2"><strong>Token Type:</strong> ${tokenData.token_type}</div>
+                    <div class="mb-2"><strong>Expires In:</strong> ${expiryMessage}</div>
+                    <div class="mb-2">
+                      <strong>Token Preview:</strong> 
+                      <code>${tokenData.access_token.substring(0, 15)}...${tokenData.access_token.substring(tokenData.access_token.length - 10)}</code>
+                    </div>
+                  </div>
+                `;
+              } else {
+                tokenStatusDetail.innerHTML = `
+                  <div class="alert alert-danger">
+                    <h5><i class="bi bi-exclamation-triangle"></i> Token Expired</h5>
+                    <p>Your token has expired. Please generate a new one from the <a href="/dev-tools.html">Developer Tools</a>.</p>
+                  </div>
+                `;
+              }
+            }
+          }
+        } catch (e) {
+          console.error('Error parsing stored token:', e);
+          tokenStatusDetail.innerHTML = `
+            <div class="alert alert-danger">
+              <h5><i class="bi bi-exclamation-triangle"></i> Token Error</h5>
+              <p>Error reading OAuth token. Please generate a new one from the <a href="/dev-tools.html">Developer Tools</a>.</p>
+            </div>
+          `;
+        }
+      } else {
+        tokenStatusDetail.innerHTML = `
+          <div class="alert alert-warning">
+            <h5><i class="bi bi-exclamation-triangle"></i> No Token Found</h5>
+            <p>No OAuth token found. Please generate one from the <a href="/dev-tools.html">Developer Tools</a>.</p>
+          </div>
+        `;
+      }
+      
+      // Test connection button
+      const testConnectionBtn = document.getElementById('test-connection-btn');
+      const getProfilesBtn = document.getElementById('get-profiles-btn');
+      const resultsCard = document.getElementById('results-card');
+      const resultsContainer = document.getElementById('results');
+      
+      testConnectionBtn.addEventListener('click', async () => {
+        resultsContainer.textContent = 'Testing connection...';
+        resultsCard.style.display = 'block';
+        
+        try {
+          // Get token from storage
+          const storedToken = localStorage.getItem('orange_api_token');
+          if (!storedToken) {
+            throw new Error('No token found. Please generate one from the Developer Tools page.');
+          }
+          
+          const tokenData = JSON.parse(storedToken);
+          const token = tokenData.access_token;
+          
+          // Test API connection
+          const response = await fetch('/api/token/status', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          
+          const data = await response.json();
+          resultsContainer.textContent = JSON.stringify(data, null, 2);
+        } catch (error) {
+          console.error('Error testing connection:', error);
+          resultsContainer.textContent = `Error: ${error.message}`;
+        }
+      });
+      
+      getProfilesBtn.addEventListener('click', async () => {
+        resultsContainer.textContent = 'Fetching QoS profiles...';
+        resultsCard.style.display = 'block';
+        
+        try {
+          // Get token from storage
+          const storedToken = localStorage.getItem('orange_api_token');
+          if (!storedToken) {
+            throw new Error('No token found. Please generate one from the Developer Tools page.');
+          }
+          
+          const tokenData = JSON.parse(storedToken);
+          const token = tokenData.access_token;
+          
+          // Fetch QoS profiles
+          const response = await fetch('/api/qos-profiles', {
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept': 'application/json'
+            }
+          });
+          
+          const data = await response.json();
+          resultsContainer.textContent = JSON.stringify(data, null, 2);
+        } catch (error) {
+          console.error('Error fetching profiles:', error);
+          resultsContainer.textContent = `Error: ${error.message}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html> 

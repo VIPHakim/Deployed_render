@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login check script -->
+  <script>
+    (function() {
+      // Check if user is logged in
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        // Redirect to login page
+        window.location.href = 'login.html';
+      }
+    })();
+  </script>
+
+  <h1>Test d'ajout d'emplacement</h1>
+  
+  <div class="card">
+    <div class="card-header">
+      <h5 class="mb-0">Add New Location</h5>
+    </div>
+    <div class="card-body">
+      <form id="location-form">
+        <div class="mb-3">
+          <label for="location-name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="location-name" value="Stade de France" required>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="latitude" class="form-label">Latitude</label>
+            <input type="text" class="form-control" id="latitude" value="48.9244726">
+          </div>
+          <div class="col">
+            <label for="longitude" class="form-label">Longitude</label>
+            <input type="text" class="form-control" id="longitude" value="2.3601325">
+          </div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Save Location</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="mt-4 alert alert-info" id="result">
+    Résultat apparaîtra ici...
+  </div>
+
+  <script>
+    document.getElementById('location-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const resultElement = document.getElementById('result');
+      resultElement.className = 'mt-4 alert alert-info';
+      resultElement.textContent = 'Envoi en cours...';
+      
+      const name = document.getElementById('location-name').value;
+      const latitude = document.getElementById('latitude').value;
+      const longitude = document.getElementById('longitude').value;
+      
+      try {
+        // S'assurer que les données sont au bon format
+        const formattedLocation = {
+          name: name.trim(),
+          latitude: parseFloat(latitude),
+          longitude: parseFloat(longitude)
+        };
+        
+        console.log('Envoi de données:', formattedLocation);
+        
+        const response = await fetch('/api/locations', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formattedLocation)
+        });
+        
+        console.log('Statut de la réponse:', response.status);
+        
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Erreur du serveur: ${response.status} - ${errorText}`);
+        }
+        
+        const data = await response.json();
+        console.log('Données reçues:', data);
+        
+        resultElement.className = 'mt-4 alert alert-success';
+        resultElement.textContent = 'Emplacement ajouté avec succès!\n' + JSON.stringify(data, null, 2);
+      } catch (error) {
+        console.error('Erreur:', error);
+        resultElement.className = 'mt-4 alert alert-danger';
+        resultElement.textContent = 'Erreur: ' + error.message;
+      }
+    });
+  </script>
+</body>
+</html> 

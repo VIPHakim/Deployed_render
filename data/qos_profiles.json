@@ -1,0 +1,30 @@
+[
+  {
+    "id": "STANDARD_QOS",
+    "name": "STANDARD_QOS",
+    "description": "Standard Quality of Service for general use cases",
+    "upstreamRate": 10,
+    "downstreamRate": 20,
+    "priority": "low",
+    "active": true
+  },
+  {
+    "id": "PREMIUM_QOS",
+    "name": "PREMIUM_QOS",
+    "description": "Premium Quality of Service for real-time applications",
+    "upstreamRate": 25,
+    "downstreamRate": 50,
+    "priority": "medium",
+    "active": true
+  },
+  {
+    "id": "GAMING_QOS",
+    "name": "GAMING_QOS",
+    "description": "Optimized for low latency gaming experience",
+    "upstreamRate": 15,
+    "downstreamRate": 30,
+    "priority": "high",
+    "latencyMs": 10,
+    "active": true
+  }
+]

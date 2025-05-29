@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QNow QoS Boost Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    .qnow-primary {
+      background-color: #ff5722;
+      border-color: #ff5722;
+    }
+    .qnow-primary:hover {
+      background-color: #e64a19;
+      border-color: #e64a19;
+    }
+    .debug-container {
+      margin-top: 30px;
+      border-top: 1px solid #dee2e6;
+      padding-top: 20px;
+    }
+    .token-display {
+      word-break: break-all;
+      font-family: monospace;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h1 class="mb-3">QNow QoS Boost Demo</h1>
+        <p class="lead">Test activating QoS Boost for network devices</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">QoS Service Controls</h5>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <button id="getTokenBtn" class="btn btn-primary">Get API Token</button>
+              <button id="activateQosBtn" class="btn qnow-primary ms-2" disabled>Activate QoS Boost</button>
+            </div>
+            
+            <div id="tokenContainer" class="mt-3" style="display: none;">
+              <h6>API Token:</h6>
+              <div class="token-display">
+                <span id="tokenDisplay"></span>
+              </div>
+            </div>
+            
+            <div id="resultContainer" class="alert alert-info mt-3" style="display: none;"></div>
+            <div id="errorContainer" class="alert alert-danger mt-3" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Debug Section -->
+    <div class="debug-container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="mb-0" id="lastApiCallHeader">Last Orange API Call</h5>
+              <button class="btn btn-sm btn-outline-secondary" id="refreshDebugBtn">
+                <i class="bi bi-arrow-clockwise"></i> Refresh
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Request:</h6>
+                  <pre id="requestDetails" class="bg-light p-3 rounded" style="max-height: 300px; overflow-y: auto;"></pre>
+                </div>
+                <div class="col-md-6">
+                  <h6>Response:</h6>
+                  <pre id="responseDetails" class="bg-light p-3 rounded" style="max-height: 300px; overflow-y: auto;"></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get DOM elements
+      const getTokenBtn = document.getElementById('getTokenBtn');
+      const activateQosBtn = document.getElementById('activateQosBtn');
+      const tokenContainer = document.getElementById('tokenContainer');
+      const tokenDisplay = document.getElementById('tokenDisplay');
+      const resultContainer = document.getElementById('resultContainer');
+      const errorContainer = document.getElementById('errorContainer');
+      const lastApiCallHeader = document.getElementById('lastApiCallHeader');
+      const requestDetails = document.getElementById('requestDetails');
+      const responseDetails = document.getElementById('responseDetails');
+      const refreshDebugBtn = document.getElementById('refreshDebugBtn');
+      
+      // Token storage
+      let currentToken = '';
+      
+      // Check if we already have a token
+      const storedToken = localStorage.getItem('orange_api_token');
+      if (storedToken) {
+        try {
+          const tokenData = JSON.parse(storedToken);
+          if (tokenData && tokenData.access_token) {
+            currentToken = tokenData.access_token;
+            tokenDisplay.textContent = currentToken;
+            tokenContainer.style.display = 'block';
+            activateQosBtn.disabled = false;
+          }
+        } catch (e) {
+          console.error('Error parsing stored token:', e);
+        }
+      }
+      
+      // Get a token from the server
+      getTokenBtn.addEventListener('click', async function() {
+        try {
+          resultContainer.style.display = 'none';
+          errorContainer.style.display = 'none';
+          
+          getTokenBtn.disabled = true;
+          getTokenBtn.textContent = 'Requesting...';
+          
+          const response = await fetch('/api/dev/get-token');
+          const data = await response.json();
+          
+          if (response.ok && data.access_token) {
+            currentToken = data.access_token;
+            tokenDisplay.textContent = currentToken;
+            tokenContainer.style.display = 'block';
+            activateQosBtn.disabled = false;
+            
+            // Store token in local storage
+            localStorage.setItem('orange_api_token', JSON.stringify(data));
+            
+            resultContainer.textContent = 'Successfully obtained API token!';
+            resultContainer.style.display = 'block';
+          } else {
+            throw new Error(data.error || 'Failed to get token');
+          }
+        } catch (error) {
+          console.error('Error getting token:', error);
+          errorContainer.textContent = `Error: ${error.message}`;
+          errorContainer.style.display = 'block';
+        } finally {
+          getTokenBtn.disabled = false;
+          getTokenBtn.textContent = 'Get API Token';
+        }
+      });
+      
+      // Activate QoS Boost
+      activateQosBtn.addEventListener('click', async function() {
+        try {
+          if (!currentToken) {
+            throw new Error('No token available. Please get a token first.');
+          }
+          
+          resultContainer.style.display = 'none';
+          errorContainer.style.display = 'none';
+          
+          activateQosBtn.disabled = true;
+          activateQosBtn.textContent = 'Activating...';
+          
+          // Generate device ID with timestamp to make it unique
+          const deviceId = `demo-device-${Date.now()}`;
+          
+          // Create session payload
+          const sessionData = {
+            device: {
+              id: deviceId
+            },
+            qosProfile: 'high',  // Use high profile for QoS boost
+            duration: 300        // 5 minutes
+          };
+          
+          // Call API to create session
+          const response = await fetch('/api/qos/sessions', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${currentToken}`,
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(sessionData)
+          });
+          
+          const data = await response.json();
+          
+          if (response.ok) {
+            resultContainer.textContent = `QoS Boost activated! Session ID: ${data.id || data.sessionId}`;
+            resultContainer.style.display = 'block';
+            
+            // Refresh debug info
+            setTimeout(fetchLatestApiLog, 500);
+          } else {
+            throw new Error(data.error || 'Failed to activate QoS Boost');
+          }
+        } catch (error) {
+          console.error('Error activating QoS Boost:', error);
+          errorContainer.textContent = `Error: ${error.message}`;
+          errorContainer.style.display = 'block';
+        } finally {
+          activateQosBtn.disabled = false;
+          activateQosBtn.textContent = 'Activate QoS Boost';
+        }
+      });
+      
+      // Fetch and display the latest API log
+      async function fetchLatestApiLog() {
+        try {
+          const response = await fetch('/api/debug/latest-log');
+          if (!response.ok) {
+            throw new Error(`Failed to fetch API log: ${response.status}`);
+          }
+          
+          const logData = await response.json();
+          
+          // Update the header with the endpoint and method
+          if (logData.endpoint && logData.method) {
+            lastApiCallHeader.textContent = `Last Orange API Call: ${logData.method} ${logData.endpoint}`;
+          } else {
+            lastApiCallHeader.textContent = 'Last Orange API Call';
+          }
+          
+          // Format the request details
+          const request = {
+            endpoint: logData.endpoint || '',
+            method: logData.method || '',
+            sessionId: logData.sessionId || '',
+            headers: logData.headers || {},
+            body: logData.body || null,
+            timestamp: logData.timestamp || new Date().toISOString()
+          };
+          
+          requestDetails.textContent = JSON.stringify(request, null, 2);
+          
+          // Format the response details
+          responseDetails.textContent = JSON.stringify(logData.response || {}, null, 2);
+        } catch (error) {
+          console.error('Error fetching API log:', error);
+          requestDetails.textContent = '{ "error": "Failed to load API log" }';
+          responseDetails.textContent = `{ "error": "${error.message}" }`;
+        }
+      }
+      
+      // Refresh button for debug info
+      refreshDebugBtn.addEventListener('click', fetchLatestApiLog);
+      
+      // Initial load of API log
+      fetchLatestApiLog();
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,540 @@
+/* Green Theme CSS - White and Green color palette based on the image */
+
+/* Styles globaux */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f7fafb;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar / Ruban latéral */
+.sidebar {
+  background-color: #ffffff;
+  color: #2c3e50;
+  min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: fixed;
+  width: 16.666667%;
+  z-index: 1030;
+}
+
+.sidebar-header {
+  padding: 25px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: linear-gradient(to right, #00a884, #02d094);
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.sidebar-menu {
+  padding-top: 15px;
+}
+
+.sidebar .nav-item {
+  margin: 4px 0;
+  padding: 0 10px;
+}
+
+.sidebar .nav-link {
+  color: #2c3e50;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.sidebar .nav-link i {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  color: #00a884;
+}
+
+.sidebar .nav-link:hover {
+  color: #00a884;
+  background-color: rgba(0, 168, 132, 0.05);
+  transform: translateX(4px);
+}
+
+.sidebar .nav-item.active .nav-link {
+  color: #ffffff;
+  background: linear-gradient(to right, #00a884, #02d094);
+  box-shadow: 0 4px 10px rgba(0, 168, 132, 0.3);
+}
+
+/* Contenu principal */
+.main-content {
+  padding: 0;
+  background-color: #f7fafb;
+  margin-left: 16.666667%;
+  width: 83.333333%;
+  transition: all 0.3s ease;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #eaedf3;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  background-color: #f7fafb;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user-info i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+  color: #00a884;
+}
+
+/* Conteneur de contenu */
+.content-container {
+  padding: 25px 30px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dashboard-card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.dashboard-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #00a884, #02d094);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.dashboard-card-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.dashboard-card-label {
+  font-size: 0.9rem;
+  color: #596780;
+}
+
+/* Bouton d'action */
+.actions button.btn-primary {
+  background: linear-gradient(to right, #00a884, #02d094);
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 168, 132, 0.3);
+}
+
+.actions button.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 168, 132, 0.4);
+}
+
+.search-area .btn-outline-secondary:hover {
+  background-color: #00a884;
+  border-color: #00a884;
+  color: white;
+}
+
+.search-area .form-control:focus {
+  box-shadow: none;
+  border-color: #00a884;
+}
+
+/* Badge colors */
+.bg-success {
+  background: linear-gradient(45deg, #00a884, #02d094) !important;
+}
+
+.bg-primary {
+  background: linear-gradient(45deg, #36b5ac, #2cc2ba) !important;
+}
+
+.bg-info {
+  background: linear-gradient(45deg, #2cc2ba, #36d9d0) !important;
+}
+
+/* Custom popup styles for Leaflet */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.location-popup h5 {
+  margin: 0 0 8px 0;
+  color: #00a884;
+  font-weight: 600;
+}
+
+/* Map elements */
+#locations-map {
+  height: 450px !important;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eaedf3;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.dashboard-map-container {
+  position: relative;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.dashboard-map-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.dashboard-map-legend {
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Table styling */
+.table thead {
+  background: linear-gradient(to right, #f7fafb, #ecf7f4);
+}
+
+.table th {
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 15px 20px;
+  border-bottom: 2px solid #eaedf3;
+}
+
+.table tr:hover {
+  background-color: #ecf7f4;
+}
+
+.table tr.table-active {
+  background-color: #e6f7f2;
+}
+
+.edit-btn:hover {
+  background-color: #00a884;
+  color: white;
+}
+
+/* Status indicators */
+.status-active {
+  background-color: #00a884;
+  box-shadow: 0 0 10px rgba(0, 168, 132, 0.5);
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  display: inline-block;
+  position: relative;
+}
+
+.status-green {
+  background-color: #00a884;
+  box-shadow: 0 0 10px rgba(0, 168, 132, 0.5);
+}
+
+/* Dev Tools Panel */
+.dev-tools-header {
+  padding: 15px 20px;
+  background: linear-gradient(to right, #00a884, #02d094);
+  color: white;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Floating Action Button */
+.floating-action-button button {
+  background: linear-gradient(135deg, #00a884, #02d094);
+}
+
+/* QoS Profile Cards */
+.qos-profile-card .card-header {
+  background: linear-gradient(45deg, #00a884, #02d094);
+}
+
+.qos-profile-status.active {
+  background-color: rgba(0, 168, 132, 0.2);
+  color: #00a884;
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: #00a884 !important;
+}
+
+/* Alert styles */
+.alert-success {
+  background-color: rgba(0, 168, 132, 0.1);
+  color: #00a884;
+}
+
+.alert-info {
+  background-color: rgba(44, 194, 186, 0.1);
+  color: #2cc2ba;
+}
+
+/* Add Group button */
+#add-group-btn {
+  background: linear-gradient(to right, #00a884, #02d094);
+}
+
+#add-panel .btn-primary {
+  background: linear-gradient(to right, #00a884, #02d094);
+}
+
+.modal .btn-primary {
+  background: linear-gradient(to right, #00a884, #02d094);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #00a884, #02d094);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* Future Forecast Panel matching the image */
+.forecast-panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.forecast-panel .panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ecf7f4;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.forecast-panel .panel-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.forecast-panel .panel-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00a884;
+}
+
+.forecast-panel .panel-label {
+  font-size: 0.9rem;
+  color: #596780;
+}
+
+/* Traffic visualization */
+.forecast-chart-container {
+  height: 200px;
+  margin-top: 20px;
+}
+
+.forecast-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.forecast-chart .chart-line {
+  stroke: #00a884;
+  stroke-width: 2;
+  fill: none;
+}
+
+.forecast-chart .chart-area {
+  fill: url(#forecast-gradient);
+  opacity: 0.2;
+}
+
+.forecast-gradient-start {
+  stop-color: #00a884;
+  stop-opacity: 0.8;
+}
+
+.forecast-gradient-end {
+  stop-color: #00a884;
+  stop-opacity: 0.1;
+}
+
+/* Donut chart colors for traffic - should match what's in the image */
+.donut-chart-segment-1 {
+  fill: #00a884; /* Deep green */
+}
+
+.donut-chart-segment-2 {
+  fill: #00d0a5; /* Medium green */
+}
+
+.donut-chart-segment-3 {
+  fill: #36cfbb; /* Light teal */
+}
+
+.donut-chart-segment-4 {
+  fill: #60d7c2; /* Very light teal */
+}
+
+.donut-chart-segment-5 {
+  fill: #a6e6d9; /* Pale teal */
+}
+
+/* Update the traffic buttons - from image */
+.tab-button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+}
+
+.tab-button.active {
+  background-color: #00a884;
+  color: white;
+}
+
+.time-selector {
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  display: inline-flex;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.time-selector .time-option {
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-selector .time-option.active {
+  background-color: #00a884;
+  color: white;
+}
+
+/* Traffic statistics display */
+.traffic-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.traffic-stat-label {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.traffic-stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00a884;
+  margin-bottom: 5px;
+}
+
+.traffic-stat-sublabel {
+  font-size: 0.85rem;
+  color: #596780;
+} 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login check script -->
+  <script>
+    (function() {
+      // Check if user is logged in
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        // Redirect to login page
+        window.location.href = 'login.html';
+      }
+    })();
+  </script>
+
+  <h1>API Test Page</h1>
+  
+  <h2>Get Token</h2>
+  <button id="get-token-btn">Get OAuth Token</button>
+  <pre id="token-result">Results will appear here...</pre>
+  
+  <h2>Get QoS Profiles</h2>
+  <button id="get-profiles-btn">Get QoS Profiles</button>
+  <pre id="profiles-result">Results will appear here...</pre>
+  
+  <h2>Create QoS Session</h2>
+  <button id="create-session-btn">Create QoS Session</button>
+  <pre id="session-result">Results will appear here...</pre>
+  
+  <script>
+    // Get OAuth Token
+    document.getElementById('get-token-btn').addEventListener('click', async () => {
+      const resultElement = document.getElementById('token-result');
+      resultElement.textContent = 'Loading...';
+      
+      try {
+        const response = await fetch('/api/oauth/token');
+        const data = await response.json();
+        resultElement.textContent = JSON.stringify(data, null, 2);
+        
+        // Store token in session storage
+        if (data.access_token) {
+          sessionStorage.setItem('oauth_token', JSON.stringify(data));
+        }
+      } catch (error) {
+        resultElement.textContent = `Error: ${error.message}`;
+      }
+    });
+    
+    // Get QoS Profiles
+    document.getElementById('get-profiles-btn').addEventListener('click', async () => {
+      const resultElement = document.getElementById('profiles-result');
+      resultElement.textContent = 'Loading...';
+      
+      try {
+        // Get token from session storage
+        const tokenData = JSON.parse(sessionStorage.getItem('oauth_token') || '{}');
+        const token = tokenData.access_token;
+        
+        if (!token) {
+          resultElement.textContent = 'Error: No token available. Get a token first.';
+          return;
+        }
+        
+        const response = await fetch('/api/qos/profiles', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const data = await response.json();
+        resultElement.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        resultElement.textContent = `Error: ${error.message}`;
+      }
+    });
+    
+    // Create QoS Session
+    document.getElementById('create-session-btn').addEventListener('click', async () => {
+      const resultElement = document.getElementById('session-result');
+      resultElement.textContent = 'Loading...';
+      
+      try {
+        // Get token from session storage
+        const tokenData = JSON.parse(sessionStorage.getItem('oauth_token') || '{}');
+        const token = tokenData.access_token;
+        
+        if (!token) {
+          resultElement.textContent = 'Error: No token available. Get a token first.';
+          return;
+        }
+        
+        // Sample data for creating a session
+        const sessionData = {
+          duration: 600,
+          deviceId: "sim-device-123",
+          appServerIp: "172.20.120.84",
+          deviceName: "Test Device"
+        };
+        
+        const response = await fetch('/api/qos/sessions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(sessionData)
+        });
+        const data = await response.json();
+        resultElement.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        resultElement.textContent = `Error: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html> 

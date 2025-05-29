@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "locationId": 1,
+    "name": "Test Orange",
+    "connectivityProfile": "XR",
+    "createdAt": "2025-05-07T07:16:51.014Z",
+    "devices": [
+      8
+    ]
+  },
+  {
+    "id": 2,
+    "locationId": 3,
+    "name": "Store Stade de France",
+    "connectivityProfile": "POS",
+    "createdAt": "2025-05-07T12:14:54.612Z",
+    "devices": []
+  },
+  {
+    "id": 3,
+    "locationId": 5,
+    "name": "Orange Test XR",
+    "connectivityProfile": "XR",
+    "createdAt": "2025-05-11T10:53:28.066Z"
+  },
+  {
+    "id": "1748509527848",
+    "locationId": 1,
+    "name": "group2 edit",
+    "connectivityProfile": "POS",
+    "devices": [
+      3
+    ]
+  }
+]

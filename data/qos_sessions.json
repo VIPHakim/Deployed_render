@@ -1,0 +1,1443 @@
+[
+  {
+    "id": "session_1746965162744",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-11T12:06:02.744Z"
+  },
+  {
+    "id": "session_1746966318931",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-11T12:25:18.931Z"
+  },
+  {
+    "id": "session_1746967415612",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-11T12:43:35.612Z"
+  },
+  {
+    "id": "session_1746986489766",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-11T18:01:29.766Z"
+  },
+  {
+    "id": "session_1746986772506",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-11T18:06:12.506Z"
+  },
+  {
+    "id": "session_1746987062831",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-11T18:11:02.831Z"
+  },
+  {
+    "id": "session_1747161758383",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T18:42:38.384Z"
+  },
+  {
+    "id": "session_1747162580202",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T18:56:20.202Z"
+  },
+  {
+    "id": "session_1747162908011",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:01:48.011Z"
+  },
+  {
+    "id": "session_1747163466921",
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:11:06.921Z",
+    "extended": true,
+    "lastExtended": "2025-05-13T19:11:21.341Z"
+  },
+  {
+    "id": "session_1747163505463",
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:11:45.463Z",
+    "extended": true,
+    "lastExtended": "2025-05-13T19:11:58.546Z"
+  },
+  {
+    "id": "session_1747164115670",
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:21:55.670Z",
+    "extended": true,
+    "lastExtended": "2025-05-13T19:22:15.533Z"
+  },
+  {
+    "id": "session_1747165191819",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:39:51.819Z"
+  },
+  {
+    "id": "f5832b1d-bc7f-4714-94b3-e9b0c570f679",
+    "sessionId": "2eaa82d2-148e-4fe6-acc6-6b3522a58206",
+    "duration": 1900,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:47:25.699Z",
+    "extended": true,
+    "lastExtended": "2025-05-13T19:49:05.534Z"
+  },
+  {
+    "id": "1b261791-2e3e-4426-92e5-db8c7f36c4ae",
+    "sessionId": "c6d428c5-820a-44d6-bfbe-5052f2414ebc",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:54:23.022Z"
+  },
+  {
+    "id": "96e9a378-5776-4397-9ef5-3bb14e616541",
+    "sessionId": "d7f5f616-5cb9-4c91-8a8d-bbc86d08003b",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-13T19:58:04.114Z"
+  },
+  {
+    "id": "9c682bdd-b303-4d15-a83a-5e7a302f898e",
+    "sessionId": "f88f1088-be31-43e1-95d8-d5f7d293321e",
+    "duration": 720,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T08:17:38.165Z",
+    "extended": true,
+    "lastExtended": "2025-05-17T08:18:03.918Z"
+  },
+  {
+    "id": "5232079a-df13-44ef-b3f0-fbb0265dc299",
+    "sessionId": "4a70ad58-0289-42d5-a0d9-f272baef9db5",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T08:19:47.149Z"
+  },
+  {
+    "id": "e0fa34a4-0e63-452a-b9b4-9b38829a2237",
+    "sessionId": "c0d037da-af65-4ef6-8161-040f2e0cb82a",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T08:20:16.053Z"
+  },
+  {
+    "id": "61bc92ce-b3d0-4ccd-b8ec-2ac1f90532d2",
+    "sessionId": "80bed9f1-138f-49f3-9489-fe2db07eacf9",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T11:44:55.790Z"
+  },
+  {
+    "id": "f3a14e03-960d-435c-99dc-9c93bbadcf64",
+    "sessionId": "3ff23456-ce75-4b80-a6cf-2ba5680eb9e5",
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T11:48:56.027Z",
+    "extended": true,
+    "lastExtended": "2025-05-17T11:49:02.537Z"
+  },
+  {
+    "id": "c10cc661-3825-4c58-af59-038c266cc4bd",
+    "sessionId": "cde391f0-327e-420b-a39e-64dae6f3d17d",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T11:50:15.516Z"
+  },
+  {
+    "id": "cfe1a634-f077-483c-8dc5-b1b1ce33446a",
+    "sessionId": "b6d9e41d-31bb-47b7-8e88-f70e9f20b74a",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T11:57:31.450Z"
+  },
+  {
+    "id": "e5be797c-08cf-4c36-b0c4-bd74d04fd90e",
+    "sessionId": "d34eda5d-94ce-49b6-9df8-80b837ad7f38",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:08:36.538Z"
+  },
+  {
+    "id": "2cd7a068-23e4-4818-820b-47c155e1e4ef",
+    "sessionId": "dc631c3f-c19d-4e4e-8400-dc0d05d2837e",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:26:47.074Z"
+  },
+  {
+    "id": "61da86e7-1367-47e2-b245-e72d681191f1",
+    "sessionId": "22fed50a-ebe0-40ad-b6db-0d65fe0a4a0a",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:37:21.745Z"
+  },
+  {
+    "id": "6899733d-023f-41e3-9d3e-cbcbd2d700a8",
+    "sessionId": "e6121f06-432c-4204-aa1b-11a52fb7911c",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:37:48.151Z"
+  },
+  {
+    "id": "1d7ec9f6-1cd1-42aa-ae61-4a21ae55f54d",
+    "sessionId": "e156632f-f2d4-45c0-aa5a-51411bd899b9",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:52:27.023Z"
+  },
+  {
+    "id": "7ad45dfb-7c5c-47e5-861c-59a9c8e55b38",
+    "sessionId": "95d8f070-2d98-46a8-b8b4-719ac85d6e92",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:53:14.614Z"
+  },
+  {
+    "id": "39f92a11-aa68-438c-b877-111ebdf08299",
+    "sessionId": "768bfdd1-aa4a-4115-9e99-bfafc47354be",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T12:56:01.073Z"
+  },
+  {
+    "id": "6dfafa50-cf6b-41c2-b192-6c492ae83ecb",
+    "sessionId": "0400e862-be55-4be4-9e2d-c2229d725780",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T13:02:26.374Z"
+  },
+  {
+    "id": "86f26d65-20c7-49be-ab4c-498d1d1dd05b",
+    "sessionId": "706d4e86-d85f-4edb-8517-4fc2aed061ac",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T13:06:50.277Z"
+  },
+  {
+    "id": "1444e5b8-2196-4f5b-837c-23379994e53f",
+    "sessionId": "10396f60-a23b-44bc-8547-642971ea9c01",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T13:11:31.700Z"
+  },
+  {
+    "id": "3534fab9-a9fa-45e1-887e-0d8712007062",
+    "sessionId": "60c095f1-5fdd-4d0b-a3c2-fdb3099f963f",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T13:41:36.102Z"
+  },
+  {
+    "id": "67284e35-c2e6-43cc-8fca-816c461be9ca",
+    "sessionId": "b2f19e1f-e7cb-4009-b2ba-5ef4b1435286",
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-17T13:47:52.956Z"
+  },
+  {
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "2482e640-a763-451c-abed-2cfb67c406a3",
+    "startedAt": 1747490101,
+    "expiresAt": 1747490701,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T13:54:56.908Z",
+    "createdWithRealToken": true
+  },
+  {
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "896538e7-8dd7-4226-9dac-265be4c75dcb",
+    "startedAt": 1747490148,
+    "expiresAt": 1747490748,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T13:55:44.010Z",
+    "createdWithRealToken": true
+  },
+  {
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "6e623620-42b7-46d5-8350-c8cc3e3af0e2",
+    "startedAt": 1747490186,
+    "expiresAt": 1747490786,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T13:56:21.735Z",
+    "createdWithRealToken": true,
+    "extended": true,
+    "lastExtended": "2025-05-17T13:56:30.492Z"
+  },
+  {
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "9d52b7e2-b600-44a9-8da9-6a5c7f798108",
+    "startedAt": 1747490261,
+    "expiresAt": 1747490861,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T13:57:36.831Z",
+    "createdWithRealToken": true
+  },
+  {
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "978bdfab-a86d-4761-a90d-d7178b4a571e",
+    "startedAt": 1747490282,
+    "expiresAt": 1747490882,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T13:57:58.069Z",
+    "createdWithRealToken": true
+  },
+  {
+    "duration": 60,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "856c3f99-33bd-4427-9392-9a7e2dba73b9",
+    "startedAt": 1747490344,
+    "expiresAt": 1747490404,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T13:59:00.328Z",
+    "createdWithRealToken": true
+  },
+  {
+    "duration": 60,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "6f778f28-b23b-46c0-8412-75ef4cf14f63",
+    "startedAt": 1747490525,
+    "expiresAt": 1747490585,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-17T14:02:00.355Z",
+    "createdWithRealToken": true
+  },
+  {
+    "duration": 600,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "f8969912-8f11-4562-956c-0f49841008c9",
+    "startedAt": 1747563908,
+    "expiresAt": 1747564508,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-18T10:25:03.865Z",
+    "createdWithRealToken": true
+  },
+  {
+    "id": "2c944384-4447-4875-a28a-1441b3fd71bc",
+    "sessionId": "25f28e58-4147-48f9-8a8e-4c3bbd9983df",
+    "duration": 20,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "status": "ACTIVE",
+    "createdAt": "2025-05-18T10:26:41.562Z",
+    "apiError": "Request failed with status code 400",
+    "isLocalOnly": true
+  },
+  {
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "2c8fe7e8-f522-4eb8-bceb-522309b6aa71",
+    "startedAt": 1747676047,
+    "expiresAt": 1747676647,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-19T17:34:02.725Z",
+    "createdWithRealToken": true,
+    "extended": true,
+    "lastExtended": "2025-05-19T17:34:12.864Z"
+  },
+  {
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "58440971-5b19-49f2-9897-673681486533",
+    "startedAt": 1747676825,
+    "expiresAt": 1747677425,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-19T17:47:00.821Z",
+    "createdWithRealToken": true,
+    "extended": true,
+    "lastExtended": "2025-05-19T17:47:08.243Z"
+  },
+  {
+    "duration": 1800,
+    "device": {
+      "ipv4Address": {
+        "publicAddress": "172.20.120.107",
+        "privateAddress": "172.20.120.107"
+      }
+    },
+    "applicationServer": {
+      "ipv4Address": "172.20.120.84"
+    },
+    "devicePorts": {
+      "ports": [
+        50984
+      ]
+    },
+    "applicationServerPorts": {
+      "ports": [
+        10000
+      ]
+    },
+    "qosProfile": "high",
+    "webhook": {
+      "notificationUrl": "https://webhook.site/669c8490-2f35-4561-8a3f-6c89618332ed"
+    },
+    "sessionId": "6661e7a5-cc62-4a1d-93eb-370b9bc2b2da",
+    "startedAt": 1748076945,
+    "expiresAt": 1748077545,
+    "qosStatus": "REQUESTED",
+    "createdAt": "2025-05-24T08:55:42.167Z",
+    "createdWithRealToken": true,
+    "extended": true,
+    "lastExtended": "2025-05-24T08:55:56.208Z"
+  }
+]

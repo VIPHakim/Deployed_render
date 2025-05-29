@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Parc des Princes",
+    "latitude": 48.84191232492016,
+    "longitude": 2.2555938711142582
+  },
+  {
+    "id": 2,
+    "name": "Marseille Stadium",
+    "latitude": 43.2698398353516,
+    "longitude": 5.396735832225621
+  },
+  {
+    "id": 3,
+    "name": "Stade de France",
+    "latitude": 48.92437576942743,
+    "longitude": 2.3600913957029594
+  },
+  {
+    "id": 5,
+    "name": "Orange Garden",
+    "latitude": 48.793396057297784,
+    "longitude": 2.33680691391692
+  }
+]

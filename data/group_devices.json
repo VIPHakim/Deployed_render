@@ -1,0 +1,20 @@
+[
+  {
+    "groupId": 2,
+    "deviceId": 3,
+    "addedAt": "2025-05-07T12:14:54.619Z"
+  },
+  {
+    "groupId": 3,
+    "deviceId": 10,
+    "addedAt": "2025-05-11T10:53:28.074Z"
+  },
+  {
+    "groupId": "1",
+    "deviceId": 8
+  },
+  {
+    "groupId": "1748509527848",
+    "deviceId": 3
+  }
+]

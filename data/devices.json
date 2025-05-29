@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "IP Camera 1",
+    "type": "Camera",
+    "ipAddress": "192.168.1.101",
+    "msisdn": "33612345001",
+    "status": "active",
+    "locationId": 1
+  },
+  {
+    "id": 2,
+    "name": "IP Camera 2",
+    "type": "Camera",
+    "ipAddress": "192.168.1.102",
+    "msisdn": "33612345002",
+    "status": "active",
+    "locationId": 1
+  },
+  {
+    "id": 3,
+    "name": "POS Terminal 1",
+    "type": "POS",
+    "ipAddress": "192.168.1.201",
+    "msisdn": "33612345003",
+    "status": "active",
+    "locationId": 1
+  },
+  {
+    "id": 4,
+    "name": "XR Headset",
+    "type": "XR",
+    "ipAddress": "192.168.1.301",
+    "msisdn": "33612345004",
+    "status": "inactive",
+    "locationId": 2
+  },
+  {
+    "id": 5,
+    "name": "Broadcasting Unit",
+    "type": "Broadcasting",
+    "ipAddress": "192.168.1.401",
+    "msisdn": "33612345005",
+    "status": "active",
+    "locationId": 2
+  },
+  {
+    "id": 6,
+    "name": "Safety Beacon 1",
+    "type": "Safety",
+    "ipAddress": "192.168.1.501",
+    "msisdn": "33612345006",
+    "status": "active",
+    "locationId": 1
+  },
+  {
+    "id": 7,
+    "name": "Safety Beacon 2",
+    "type": "Safety",
+    "ipAddress": "192.168.1.502",
+    "msisdn": "33612345007",
+    "status": "maintenance",
+    "locationId": 2
+  },
+  {
+    "id": 8,
+    "name": "Orange Terminal Test",
+    "type": "POS",
+    "ipAddress": "172.20.120.107",
+    "msisdn": "",
+    "status": "active",
+    "locationId": 1
+  },
+  {
+    "id": 9,
+    "name": "Orange Terminal Test 2",
+    "type": "Other",
+    "ipAddress": "172.20.120.108",
+    "msisdn": "0762081791",
+    "status": "active",
+    "locationId": 2
+  },
+  {
+    "id": 10,
+    "name": "Orange Terminal Lab 4G",
+    "type": "XR",
+    "ipAddress": "172.20.120.107",
+    "msisdn": "33699901038",
+    "status": "active",
+    "locationId": "5",
+    "createdAt": "2025-05-11T10:52:25.773Z"
+  },
+  {
+    "id": 1747469739718,
+    "name": "Test UE",
+    "type": "Camera",
+    "ipAddress": "192.168.11.13",
+    "msisdn": "0764357798",
+    "status": "active",
+    "locationId": "1"
+  }
+]

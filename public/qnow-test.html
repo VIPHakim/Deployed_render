@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QNow - QoS Testing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/qos-sessions.css">
+  <style>
+    body {
+      background-color: #f5f7f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .aida-header {
+      background-color: #009B89;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .qnow-logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .qnow-logo span {
+      font-size: 24px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      background-color: #009B89;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+    }
+    
+    .user-menu {
+      display: flex;
+      align-items: center;
+    }
+    
+    .user-menu .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+    }
+    
+    .main-content {
+      padding: 20px;
+    }
+    
+    .content-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .content-card h2 {
+      color: #009B89;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .btn-primary {
+      background-color: #009B89;
+      border-color: #009B89;
+    }
+    
+    .btn-primary:hover {
+      background-color: #00816F;
+      border-color: #00816F;
+    }
+    
+    .form-control:focus {
+      border-color: #009B89;
+      box-shadow: 0 0 0 0.25rem rgba(0, 155, 137, 0.25);
+    }
+    
+    .nav-tabs .nav-link.active {
+      color: #009B89;
+      border-color: #dee2e6 #dee2e6 #fff;
+    }
+    
+    .nav-tabs .nav-link:hover {
+      color: #00816F;
+    }
+    
+    .btn-logout {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: white;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      margin-left: 10px;
+    }
+    
+    .btn-logout:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login check script -->
+  <script>
+    (function() {
+      // Check if user is logged in
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        // Redirect to login page
+        window.location.href = 'login.html';
+      }
+    })();
+  </script>
+
+  <header class="aida-header">
+    <div class="qnow-logo">
+      <div class="logo-circle">Q</div>
+      <span>QNow</span>
+    </div>
+    <div class="user-menu">
+      <span id="username-display">Admin</span>
+      <div class="user-avatar">
+        <i class="bi bi-person-fill"></i>
+      </div>
+      <button class="btn btn-logout" id="logout-btn">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </button>
+    </div>
+  </header>
+  
+  <div class="main-content">
+    <div class="content-card">
+      <h2>QoS Management Dashboard</h2>
+      <p>Use this dashboard to manage Quality of Service settings for your network devices.</p>
+      
+      <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active Sessions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Scheduled Sessions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">History</a>
+        </li>
+      </ul>
+      
+      <!-- QoS Sessions Container will be inserted here by our scripts -->
+      
+      <form class="mt-4">
+        <h5 class="mb-3">Create New QoS Session</h5>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="device-select" class="form-label">Device</label>
+            <select class="form-select" id="device-select">
+              <option selected>Terminal Device (172.20.120.107)</option>
+              <option>Camera Device (172.20.120.84)</option>
+              <option>POS Terminal (172.20.120.201)</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="duration" class="form-label">Duration (seconds)</label>
+            <input type="number" class="form-control" id="duration" value="600">
+          </div>
+        </div>
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="app-server-ip" class="form-label">App Server IPv4</label>
+            <input type="text" class="form-control" id="app-server-ip" value="172.20.120.84">
+          </div>
+          <div class="col-md-6">
+            <label for="profile" class="form-label">QoS Profile</label>
+            <select class="form-select" id="profile">
+              <option selected>Standard</option>
+              <option>Premium</option>
+              <option>Ultra</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" id="activate-qos-btn">
+            <i class="bi bi-lightning-charge"></i> Activate QoS Boost
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/persistent-qos-sessions.js"></script>
+  <script src="js/integrate-persistent-qos.js"></script>
+  <script src="js/live-countdown.js"></script>
+  <script src="js/user-auth.js"></script>
+  <script>
+    // Create a test session if none exist
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if there are any sessions
+      const savedSessions = localStorage.getItem('qnow_active_qos_sessions');
+      if (!savedSessions || JSON.parse(savedSessions).length === 0) {
+        // Create a sample session
+        const session = {
+          sessionId: 'qnow-' + Math.random().toString(36).substring(2, 15),
+          deviceName: 'Terminal Device',
+          deviceIp: '172.20.120.107',
+          qosStatus: 'ACTIVE',
+          isActive: true,
+          timestamp: new Date().toISOString(),
+          duration: 600,
+          expirationNotified: false
+        };
+        
+        localStorage.setItem('qnow_active_qos_sessions', JSON.stringify([session]));
+        console.log('Created sample QoS session for testing');
+        
+        // Trigger update event
+        const event = new CustomEvent('qosSessionsUpdated', {
+          detail: { sessions: [session], source: 'test-script' }
+        });
+        document.dispatchEvent(event);
+      }
+    });
+  </script>
+</body>
+</html> 

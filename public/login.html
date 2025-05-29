@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QNow Network Management - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #f5f7f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .login-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 450px;
+    }
+    
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .login-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo-circle {
+      width: 60px;
+      height: 60px;
+      background-color: #009B89;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      border: 2px solid #009B89;
+    }
+    
+    .login-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .login-subtitle {
+      color: #666;
+      font-size: 16px;
+    }
+    
+    .btn-login {
+      background-color: #009B89;
+      border-color: #009B89;
+      width: 100%;
+      padding: 10px;
+      font-weight: 500;
+    }
+    
+    .btn-login:hover {
+      background-color: #00816F;
+      border-color: #00816F;
+    }
+    
+    .form-control:focus {
+      border-color: #009B89;
+      box-shadow: 0 0 0 0.25rem rgba(0, 155, 137, 0.25);
+    }
+    
+    .login-footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .alert {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <div class="login-logo">
+        <div class="logo-circle">Q</div>
+      </div>
+      <h1 class="login-title">QNow</h1>
+      <p class="login-subtitle">Network Management Platform</p>
+    </div>
+    
+    <div class="alert alert-danger" id="login-error">
+      <i class="bi bi-exclamation-circle"></i> Invalid username or password. Please try again.
+    </div>
+    
+    <form id="login-form">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+          <input type="text" class="form-control" id="username" required>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-lock"></i></span>
+          <input type="password" class="form-control" id="password" required>
+          <button class="btn btn-outline-secondary" type="button" id="toggle-password">
+            <i class="bi bi-eye"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="remember-me">
+        <label class="form-check-label" for="remember-me">Remember me</label>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-login">Login</button>
+    </form>
+    
+    <div class="login-footer">
+      <p>© 2025 All rights reserved.</p>
+      <div class="mt-2">
+        <a href="qos-demo.html" class="btn btn-sm btn-outline-info">QoS Demo</a>
+        <a href="dev-tools.html" class="btn btn-sm btn-outline-secondary">Developer Tools</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is already logged in
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn === 'true') {
+        window.location.href = 'index.html';
+        return;
+      }
+      
+      // Handle form submission
+      const loginForm = document.getElementById('login-form');
+      const loginError = document.getElementById('login-error');
+      
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Check credentials
+        if (username === 'orange001' && password === 'Orange123!') {
+          // Store login status
+          sessionStorage.setItem('isLoggedIn', 'true');
+          sessionStorage.setItem('username', username);
+          
+          // Redirect to main page
+          window.location.href = 'index.html';
+        } else {
+          // Show error
+          loginError.style.display = 'block';
+          
+          // Clear password field
+          document.getElementById('password').value = '';
+        }
+      });
+      
+      // Toggle password visibility
+      const togglePassword = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+      
+      togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Toggle icon
+        const icon = this.querySelector('i');
+        icon.classList.toggle('bi-eye');
+        icon.classList.toggle('bi-eye-slash');
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,238 @@
+/* QoS Sessions Styling */
+
+.qos-session-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Header styling */
+.qos-session-container h5 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Info alert styling */
+.qos-session-container .alert-info {
+  background-color: #e7f8f6;
+  border-color: #c9ebe7;
+  color: #009B89;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.qos-session-container .alert-info i {
+  margin-right: 8px;
+}
+
+/* Table styling */
+.qos-session-container .table {
+  margin-bottom: 0;
+}
+
+.qos-session-container .table th {
+  background-color: #f7f7f7;
+  color: #555;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+}
+
+.qos-session-container .table td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+/* Active/status badges styling */
+.qos-session-container .badge {
+  padding: 6px 10px;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.qos-session-container .session-status {
+  min-width: 70px;
+  text-align: center;
+}
+
+.qos-session-container .bg-success {
+  background-color: #009B89 !important;
+}
+
+.qos-session-container .bg-info {
+  background-color: #00B3A0 !important;
+}
+
+.qos-session-container .bg-danger {
+  background-color: #e74c3c !important;
+}
+
+.qos-session-container .bg-warning {
+  background-color: #f39c12 !important;
+}
+
+.qos-session-container .bg-secondary {
+  background-color: #95a5a6 !important;
+}
+
+/* Button styling */
+.qos-session-container .btn-sm {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.qos-session-container .btn-outline-primary {
+  color: #009B89;
+  border-color: #009B89;
+}
+
+.qos-session-container .btn-outline-primary:hover {
+  background-color: #009B89;
+  color: white;
+}
+
+.qos-session-container .btn-outline-success {
+  color: #009B89;
+  border-color: #009B89;
+}
+
+.qos-session-container .btn-outline-success:hover {
+  background-color: #009B89;
+  color: white;
+}
+
+.qos-session-container .btn-outline-danger {
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+.qos-session-container .btn-outline-danger:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+.qos-session-container .refresh-button {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* Refresh animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.qos-session-container .refresh-button:active i {
+  animation: spin 0.5s linear;
+}
+
+/* Time remaining badge */
+.qos-session-container .time-remaining {
+  margin-left: 8px;
+  background-color: #00B3A0;
+  font-weight: 500;
+}
+
+/* Small text */
+.qos-session-container .small {
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+/* Row hover effect */
+.qos-session-container .table-hover tbody tr:hover {
+  background-color: #f0f9f8;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .qos-session-container {
+    padding: 15px;
+  }
+  
+  .qos-session-container .table th,
+  .qos-session-container .table td {
+    padding: 10px;
+  }
+  
+  .qos-session-container .btn-sm {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Add or update existing styles for time remaining */
+.time-remaining-badge,
+.time-remaining {
+  padding: 0.35em 0.65em;
+  font-size: 0.85em;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+/* Pulsating animation for urgent countdowns */
+@keyframes pulse-countdown {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.pulse-animation {
+  animation: pulse-countdown 1s infinite;
+}
+
+/* Badge colors */
+.bg-info {
+  background-color: #0dcaf0 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+/* QoS session item styles */
+.qos-session-item {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.qos-session-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Session status badges */
+.session-status {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Status update animation */
+@keyframes status-update-flash {
+  0% { background-color: rgba(0, 255, 0, 0.1); }
+  50% { background-color: rgba(0, 255, 0, 0.2); }
+  100% { background-color: transparent; }
+}
+
+.status-updated {
+  animation: status-update-flash 1s;
+} 

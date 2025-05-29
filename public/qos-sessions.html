@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QNow Platform - QoS Sessions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/qos-sessions.css">
+  <style>
+    body {
+      background-color: #f5f7f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 20px;
+    }
+    
+    .main-header {
+      background-color: #009B89;
+      color: white;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .main-header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    
+    .form-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .form-container .form-label {
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .form-container .form-control {
+      border-radius: 4px;
+      border-color: #ddd;
+    }
+    
+    .form-container .form-control:focus {
+      border-color: #009B89;
+      box-shadow: 0 0 0 0.25rem rgba(0, 155, 137, 0.25);
+    }
+    
+    .btn-activate {
+      background-color: #009B89;
+      border-color: #009B89;
+      color: white;
+      font-weight: 500;
+      padding: 8px 16px;
+    }
+    
+    .btn-activate:hover {
+      background-color: #00816F;
+      border-color: #00816F;
+    }
+    
+    .btn-schedule {
+      background-color: #00B3A0;
+      border-color: #00B3A0;
+      color: white;
+      font-weight: 500;
+    }
+    
+    .btn-schedule:hover {
+      background-color: #009B89;
+      border-color: #009B89;
+    }
+    
+    .form-check-input:checked {
+      background-color: #009B89;
+      border-color: #009B89;
+    }
+    
+    .btn-logout {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: white;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      margin-left: 10px;
+    }
+    
+    .btn-logout:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login check script -->
+  <script>
+    (function() {
+      // Check if user is logged in
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        // Redirect to login page
+        window.location.href = 'login.html';
+      }
+    })();
+  </script>
+
+  <div class="container">
+    <div class="main-header">
+      <h1>QNow Platform</h1>
+      <div class="user-info">
+        <span id="username-display">Admin</span>
+        <button class="btn btn-logout" id="logout-btn">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </div>
+    </div>
+    
+    <div class="qos-session-container">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5>Active QoS Sessions</h5>
+        <button class="btn btn-sm btn-outline-primary refresh-button">
+          <i class="bi bi-arrow-clockwise"></i> Refresh
+        </button>
+      </div>
+      
+      <div class="alert alert-info">
+        <i class="bi bi-info-circle"></i> 
+        QoS sessions will automatically show notifications when they're about to expire. You can click the 
+        <span class="text-primary">Extend</span> button to add more time to an active session.
+      </div>
+      
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>DEVICE</th>
+              <th>SESSION ID</th>
+              <th>STATUS</th>
+              <th>CREATED</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="qos-session-item" data-session-id="c421f726-bf1f-4563-8ca8-1a152a1dbefc">
+              <td><b>Orange Terminal Test</b></td>
+              <td><span class="small text-secondary">c421f726-bf1f-4563-8ca8-1a152a1dbefc</span></td>
+              <td>
+                <span class="badge bg-info session-status" data-session-id="c421f726-bf1f-4563-8ca8-1a152a1dbefc">REQUESTED</span>
+                <span class="badge bg-success ms-1 active-indicator">Active</span>
+                <span class="badge bg-info ms-1 time-remaining">9m 56s Left</span>
+              </td>
+              <td><span class="small">11/05/2025 13:02:12</span></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary refresh-session-btn" data-session-id="c421f726-bf1f-4563-8ca8-1a152a1dbefc">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-success extend-session-btn" data-session-id="c421f726-bf1f-4563-8ca8-1a152a1dbefc">
+                  <i class="bi bi-lightning-charge"></i> Extend
+                </button>
+                <button class="btn btn-sm btn-outline-danger delete-session-btn" data-session-id="c421f726-bf1f-4563-8ca8-1a152a1dbefc">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="form-container">
+      <h5 class="mb-3">Connectivity Profile: POS</h5>
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="duration" class="form-label">Duration (seconds)</label>
+          <input type="number" id="duration" class="form-control" value="600">
+        </div>
+        <div class="col-md-3">
+          <label for="app-server-ip" class="form-label">App Server IPv4</label>
+          <input type="text" id="app-server-ip" class="form-control" value="172.20.120.84">
+        </div>
+        <div class="col-md-3">
+          <label for="qos-profile" class="form-label">QoS Profile (UUID)</label>
+          <input type="text" id="qos-profile" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label for="webhook-url" class="form-label">Webhook URL</label>
+          <input type="text" id="webhook-url" class="form-control" value="https://webhook.site/669c8490-2f35-456">
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="select-all-devices">
+          <label class="form-check-label" for="select-all-devices">Select All Devices</label>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="orange-terminal" checked>
+          <label class="form-check-label" for="orange-terminal">Orange Terminal Test (172.20.120.107)</label>
+        </div>
+      </div>
+      
+      <div class="d-flex flex-wrap">
+        <button class="btn btn-activate me-2 mb-2" id="activate-qos-btn">
+          <i class="bi bi-lightning-charge"></i> Activate QoS Boost Now
+        </button>
+        <span class="mt-2 me-2 mb-2">or schedule:</span>
+        <input type="datetime-local" class="form-control mx-2 mb-2" style="width: auto;">
+        <span class="mt-2 mx-2 mb-2">to</span>
+        <input type="datetime-local" class="form-control mx-2 mb-2" style="width: auto;">
+        <button class="btn btn-schedule mb-2" id="schedule-qos-btn">
+          <i class="bi bi-calendar"></i> Schedule QoS Boost
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/persistent-qos-sessions.js"></script>
+  <script src="js/live-countdown.js"></script>
+  <script src="js/user-auth.js"></script>
+</body>
+</html> 
